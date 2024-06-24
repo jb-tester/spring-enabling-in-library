@@ -1,5 +1,7 @@
 package com.mytests.spring.springuseenablerlibrary;
 
+import com.mytests.spring.components.AppComponent;
+import com.mytests.spring.components.LibComponent;
 import com.mytests.spring.configProps.MyAppProps;
 import com.mytests.spring.configProps.MyProps;
 import com.mytests.spring.feignClients.Client1;
@@ -14,21 +16,25 @@ public class ClientsController {
     private final MyProps myProps;
     private final MyAppProps myAppProps;
     private final Client2 client2;
+    private final LibComponent libComponent;
+    private final AppComponent appComponent;
 
-    public ClientsController(Client1 client1, MyProps myProps, MyAppProps myAppProps, Client2 client2) {
+    public ClientsController(Client1 client1, MyProps myProps, MyAppProps myAppProps, Client2 client2, LibComponent libComponent, AppComponent appComponent) {
         this.client1 = client1;
         this.myProps = myProps;
         this.myAppProps = myAppProps;
         this.client2 = client2;
+        this.libComponent = libComponent;
+        this.appComponent = appComponent;
     }
 
     @GetMapping("/server/t1")
     public String t1() {
-        return myProps.getFoo() + " " + client1.test1();
+        return libComponent.getId() + " " + myProps.getFoo() + " " + client1.test1();
     }
 
     @GetMapping("/server/t2")
     public String t2() {
-        return myAppProps.getFoo() + " " + client2.test2();
+        return appComponent.getId() + " " + myAppProps.getFoo() + " " + client2.test2();
     }
 }

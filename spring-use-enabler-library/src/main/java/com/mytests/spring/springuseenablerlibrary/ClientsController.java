@@ -19,7 +19,8 @@ public class ClientsController {
     private final LibComponent libComponent;
     private final AppComponent appComponent;
 
-    public ClientsController(Client1 client1, MyProps myProps, MyAppProps myAppProps, Client2 client2, LibComponent libComponent, AppComponent appComponent) {
+    public ClientsController(Client1 client1, MyProps myProps, LibComponent libComponent, // library beans
+                             MyAppProps myAppProps, Client2 client2, AppComponent appComponent) { // local app beans
         this.client1 = client1;
         this.myProps = myProps;
         this.myAppProps = myAppProps;

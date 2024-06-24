@@ -10,3 +10,5 @@
     but for the local ones the autowiring errors are shown. The corresponding local beans are not detected as beans 
     since the corresponding enabling annotations from library configs are not considered.
 6. Run `server-app` and `spring-use-enabler-library` applications and use the requests from `spring-use-enabler-library/http-request.http` to check that the application works as expected.
+
+https://youtrack.jetbrains.com/issue/IDEA-355419

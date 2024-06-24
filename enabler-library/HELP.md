@@ -1,0 +1,1 @@
+# Library module. Just install it using mvn install
